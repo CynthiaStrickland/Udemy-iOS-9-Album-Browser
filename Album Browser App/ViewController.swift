@@ -22,6 +22,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
   self.navigationItem.title = albumName
     
+    self.automaticallyAdjustsScrollViewInsets = false
+    
+    
   }
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
@@ -49,6 +52,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
   }
 
+  // Mark:  Collection View Layout
+  
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    
+    let width = self.view.frame.width
+    let sizeDimension = (width - 2 * 3) / 4
+    
+    return CGSizeMake(sizeDimension, sizeDimension)
+    
+  }
+  
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    return 1.0
+  }
+  
+  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    return 1.0
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    <#code#>
+  }
 }
 
 
