@@ -157,15 +157,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-z6-HkX">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="12" y="64" width="351" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="top" secondItem="hqa-mW-GPp" secondAttribute="bottom" id="2gI-UV-W2Q"/>
-                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="leading" secondItem="ZWT-O0-5mV" secondAttribute="leadingMargin" id="9go-x2-Ahh"/>
-                            <constraint firstItem="pzJ-cf-ICa" firstAttribute="top" secondItem="Hl1-z6-HkX" secondAttribute="bottom" id="gh0-Yn-BMl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Hl1-z6-HkX" secondAttribute="trailing" id="h1E-3i-zib"/>
+                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="leading" secondItem="ZWT-O0-5mV" secondAttribute="leadingMargin" constant="-4" id="8rE-ca-P7d"/>
+                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="top" secondItem="hqa-mW-GPp" secondAttribute="bottom" id="P3w-e9-V7J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hl1-z6-HkX" secondAttribute="trailing" constant="-4" id="XQ7-YU-A3N"/>
+                            <constraint firstItem="pzJ-cf-ICa" firstAttribute="top" secondItem="Hl1-z6-HkX" secondAttribute="bottom" id="cuY-Ei-W3j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="Bam-SO-IEw">

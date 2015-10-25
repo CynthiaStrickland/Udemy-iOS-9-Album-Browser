@@ -19,6 +19,27 @@ class ImageViewController: UIViewController {
 
   
   @IBAction func trash(sender: AnyObject) {
+    let alertController = UIAlertController(title: "Delete Image?", message: "Confirm Delete Image", preferredStyle: UIAlertControllerStyle.Alert)
+    alertController.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+  
+  PHPhotoLibrary.sharedPhotoLibrary().performChanges({ () -> Void in
+    let trash = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection)
+    trash?.removeAssets([self.assetFetchResult[self.index]])
+    }, completionHandler: { (success: Bool, error: NSError?) -> Void in
+      
+      if success {
+        print("Image Deleted")
+        
+      } else {
+        print("Error, Image Not Deleted")
+      }
+  
+  })
+      UIView.animateWithDuration(1.0, animations: { () -> Void in
+        self.imageView.alpha = 0.0
+      })
+      
+    }))
     
   }
   
