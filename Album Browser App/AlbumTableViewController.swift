@@ -14,6 +14,7 @@ class AlbumTableViewController: UITableViewController {
   var albumsCollection = PHFetchResult()
   var assetsCollection = PHAssetCollection()
   var photoAsset = PHFetchResult()
+  
   var albumNames = [String]()
   
   
@@ -64,7 +65,7 @@ class AlbumTableViewController: UITableViewController {
           PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil, resultHandler: { (image: UIImage?, object: [NSObject: AnyObject]?) -> Void in
             
           cell.albumImage.image = image
-            cell.albumCount.text = totalImages > 1 ? "\(totalImages) images" : "\(totalImages) image"
+          cell.albumCount.text = totalImages > 1 ? "\(totalImages) images" : "\(totalImages) image"
             
         })
           
@@ -79,7 +80,22 @@ class AlbumTableViewController: UITableViewController {
         return cell
     }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
+    if segue.identifier == "showAlbums" {
+      
+      let controller: ViewController = segue.destinationViewController as! ViewController
+      let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow!
+      
+      controller.albumName = albumNames[indexPath.row]
+      assetsCollection = albumsCollection[indexPath.row] as! PHAssetCollection
+      controller.assetsCollection = assetsCollection
+      controller.photoAssets = PHAsset.fetchAssetsInAssetCollection(assetsCollection, options: nil)
+    }
+  }
+  
+  
+}
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -115,14 +131,7 @@ class AlbumTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
-}

@@ -95,25 +95,44 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="w5Z-xi-zge">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="w5Z-xi-zge" customClass="AlbumsCollectionViewCell" customModule="Album_Browser_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PDX-y1-nDI">
+                                                    <rect key="frame" x="8" y="8" width="34" height="34"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="PDX-y1-nDI" firstAttribute="trailing" secondItem="w5Z-xi-zge" secondAttribute="trailingMargin" id="4MF-4Z-v6M"/>
+                                            <constraint firstItem="PDX-y1-nDI" firstAttribute="bottom" secondItem="w5Z-xi-zge" secondAttribute="bottomMargin" id="W5K-Tr-WkB"/>
+                                            <constraint firstItem="PDX-y1-nDI" firstAttribute="top" secondItem="w5Z-xi-zge" secondAttribute="topMargin" id="b9d-EA-LtJ"/>
+                                            <constraint firstItem="PDX-y1-nDI" firstAttribute="leading" secondItem="w5Z-xi-zge" secondAttribute="leadingMargin" id="r51-iC-Ed4"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="imageView" destination="PDX-y1-nDI" id="sxf-ES-OFi"/>
                                             <segue destination="mOe-na-Csv" kind="show" identifier="showImage" id="ogA-7T-AQn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="AfA-66-Vbr"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Ei1-jw-aYx"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="IQm-uH-S1Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="OFY-v5-RKl" id="ZpB-Jp-mfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,6 +149,11 @@
                     <view key="view" contentMode="scaleToFill" id="ZWT-O0-5mV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-z6-HkX">
+                                <rect key="frame" x="67" y="130" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="Bam-SO-IEw">
