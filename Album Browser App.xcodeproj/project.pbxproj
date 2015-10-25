@@ -16,6 +16,7 @@
 		3D04FE071BDC511800E8B44A /* Album_Browser_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE061BDC511800E8B44A /* Album_Browser_AppUITests.swift */; };
 		3D04FE151BDC6DD200E8B44A /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE141BDC6DD200E8B44A /* AlbumTableViewController.swift */; };
 		3D04FE171BDC6DEB00E8B44A /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */; };
+		3D04FE191BDC6F0A00E8B44A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D04FE181BDC6F0A00E8B44A /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +38,12 @@
 
 /* Begin PBXFileReference section */
 		3D04FDE31BDC511800E8B44A /* Album Browser App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Album Browser App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D04FDE61BDC511800E8B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D04FDE61BDC511800E8B44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Album Browser App/AppDelegate.swift"; sourceTree = "<group>"; };
 		3D04FDE81BDC511800E8B44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D04FDEB1BDC511800E8B44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D04FDED1BDC511800E8B44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D04FDF01BDC511800E8B44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3D04FDF21BDC511800E8B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D04FDF21BDC511800E8B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Album Browser App/Info.plist"; sourceTree = "<group>"; };
 		3D04FDF71BDC511800E8B44A /* Album Browser AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Album Browser AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D04FDFB1BDC511800E8B44A /* Album_Browser_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album_Browser_AppTests.swift; sourceTree = "<group>"; };
 		3D04FDFD1BDC511800E8B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		3D04FE081BDC511800E8B44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D04FE141BDC6DD200E8B44A /* AlbumTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
 		3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		3D04FE181BDC6F0A00E8B44A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D04FE191BDC6F0A00E8B44A /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,10 @@
 				3D04FDFA1BDC511800E8B44A /* Album Browser AppTests */,
 				3D04FE051BDC511800E8B44A /* Album Browser AppUITests */,
 				3D04FDE41BDC511800E8B44A /* Products */,
+				3D04FDE61BDC511800E8B44A /* AppDelegate.swift */,
+				3D04FDF21BDC511800E8B44A /* Info.plist */,
+				3D04FDEF1BDC511800E8B44A /* LaunchScreen.storyboard */,
+				3D04FE181BDC6F0A00E8B44A /* Photos.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,11 +111,8 @@
 				3D04FDEA1BDC511800E8B44A /* Main.storyboard */,
 				3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */,
 				3D04FE141BDC6DD200E8B44A /* AlbumTableViewController.swift */,
-				3D04FDE61BDC511800E8B44A /* AppDelegate.swift */,
 				3D04FDE81BDC511800E8B44A /* ViewController.swift */,
 				3D04FDED1BDC511800E8B44A /* Assets.xcassets */,
-				3D04FDEF1BDC511800E8B44A /* LaunchScreen.storyboard */,
-				3D04FDF21BDC511800E8B44A /* Info.plist */,
 			);
 			path = "Album Browser App";
 			sourceTree = "<group>";
@@ -314,6 +318,7 @@
 				3D04FDF01BDC511800E8B44A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = "Album Browser App";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
