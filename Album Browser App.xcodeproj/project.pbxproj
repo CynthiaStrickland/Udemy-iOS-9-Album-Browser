@@ -18,6 +18,7 @@
 		3D04FE171BDC6DEB00E8B44A /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */; };
 		3D04FE191BDC6F0A00E8B44A /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D04FE181BDC6F0A00E8B44A /* Photos.framework */; };
 		3D04FE1D1BDC7C4900E8B44A /* AlbumsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE1C1BDC7C4900E8B44A /* AlbumsCollectionViewCell.swift */; };
+		3D04FE1F1BDD92D400E8B44A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04FE1E1BDD92D400E8B44A /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		3D04FE181BDC6F0A00E8B44A /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		3D04FE1C1BDC7C4900E8B44A /* AlbumsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsCollectionViewCell.swift; sourceTree = "<group>"; };
+		3D04FE1E1BDD92D400E8B44A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				3D04FDEA1BDC511800E8B44A /* Main.storyboard */,
 				3D04FE161BDC6DEB00E8B44A /* AlbumTableViewCell.swift */,
 				3D04FE141BDC6DD200E8B44A /* AlbumTableViewController.swift */,
+				3D04FE1E1BDD92D400E8B44A /* ImageViewController.swift */,
 				3D04FDE81BDC511800E8B44A /* ViewController.swift */,
 				3D04FE1C1BDC7C4900E8B44A /* AlbumsCollectionViewCell.swift */,
 				3D04FDED1BDC511800E8B44A /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 				3D04FE1D1BDC7C4900E8B44A /* AlbumsCollectionViewCell.swift in Sources */,
 				3D04FE151BDC6DD200E8B44A /* AlbumTableViewController.swift in Sources */,
 				3D04FDE71BDC511800E8B44A /* AppDelegate.swift in Sources */,
+				3D04FE1F1BDD92D400E8B44A /* ImageViewController.swift in Sources */,
 				3D04FE171BDC6DEB00E8B44A /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

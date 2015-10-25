@@ -72,7 +72,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    <#code#>
+    
+    if segue.identifier == "showImage" {
+      
+      if let controller: ImageViewController = segue.destinationViewController as? ImageViewController {
+        
+      controller.index = self.collectionView.indexPathForCell(sender as! UICollectionViewCell)!.item
+      
+      controller.assetFetchResult = self.photoAssets
+      controller.assetCollection = self.assetsCollection
+      }
+    }
   }
 }
 

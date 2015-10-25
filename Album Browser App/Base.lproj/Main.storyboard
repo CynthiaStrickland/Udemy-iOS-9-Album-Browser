@@ -147,7 +147,7 @@
         <!--Image-->
         <scene sceneID="PsM-Ty-bwV">
             <objects>
-                <viewController id="mOe-na-Csv" sceneMemberID="viewController">
+                <viewController id="mOe-na-Csv" customClass="ImageViewController" customModule="Album_Browser_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hqa-mW-GPp"/>
                         <viewControllerLayoutGuide type="bottom" id="pzJ-cf-ICa"/>
@@ -156,16 +156,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-z6-HkX">
-                                <rect key="frame" x="67" y="130" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hl1-z6-HkX">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="top" secondItem="hqa-mW-GPp" secondAttribute="bottom" id="2gI-UV-W2Q"/>
+                            <constraint firstItem="Hl1-z6-HkX" firstAttribute="leading" secondItem="ZWT-O0-5mV" secondAttribute="leadingMargin" id="9go-x2-Ahh"/>
+                            <constraint firstItem="pzJ-cf-ICa" firstAttribute="top" secondItem="Hl1-z6-HkX" secondAttribute="bottom" id="gh0-Yn-BMl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hl1-z6-HkX" secondAttribute="trailing" id="h1E-3i-zib"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Image" id="Bam-SO-IEw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="XNk-Sz-C9y"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="XNk-Sz-C9y">
+                            <connections>
+                                <action selector="trash:" destination="mOe-na-Csv" id="ZqQ-Z8-hQI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="Hl1-z6-HkX" id="cB4-pu-Jap"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usZ-8j-zt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
