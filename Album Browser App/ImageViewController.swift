@@ -41,6 +41,13 @@ class ImageViewController: UIViewController {
       
     }))
     
+    alertController.addAction(UIAlertAction(title: "NO", style: .Default, handler: { (alertAction: UIAlertAction) -> Void in
+      print("You Selected NO")
+
+    }))
+    
+    self.presentViewController(alertController, animated: true, completion: nil)
+  
   }
   
     override func viewDidLoad() {
