@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yyE-F0-mCx" id="E4G-TW-xck">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="147.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="148"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kNR-ZW-5Ao">
@@ -29,12 +29,6 @@
                                                 <constraint firstAttribute="height" constant="128" id="E4c-xl-v6s"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4c-g1-hxN">
-                                            <rect key="frame" x="298" y="65" width="36" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwe-CK-He4">
                                             <rect key="frame" x="148" y="119" width="186" height="21"/>
                                             <constraints>
@@ -44,15 +38,23 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4c-g1-hxN">
+                                            <rect key="frame" x="148" y="61" width="186" height="25"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Mwe-CK-He4" firstAttribute="leading" secondItem="kNR-ZW-5Ao" secondAttribute="trailing" constant="8" id="1dk-ow-i69"/>
-                                        <constraint firstItem="Mwe-CK-He4" firstAttribute="trailing" secondItem="E4c-g1-hxN" secondAttribute="trailing" id="DLT-wG-6Qm"/>
-                                        <constraint firstItem="E4c-g1-hxN" firstAttribute="centerY" secondItem="E4G-TW-xck" secondAttribute="centerY" id="KkO-tu-CDB"/>
+                                        <constraint firstItem="E4c-g1-hxN" firstAttribute="centerY" secondItem="kNR-ZW-5Ao" secondAttribute="centerY" id="1sV-hU-ovQ"/>
+                                        <constraint firstItem="E4c-g1-hxN" firstAttribute="trailing" secondItem="E4G-TW-xck" secondAttribute="trailingMargin" id="BGa-Y2-EJR"/>
+                                        <constraint firstItem="E4c-g1-hxN" firstAttribute="leading" secondItem="Mwe-CK-He4" secondAttribute="leading" id="K6j-pR-1Lu"/>
                                         <constraint firstItem="kNR-ZW-5Ao" firstAttribute="centerY" secondItem="E4G-TW-xck" secondAttribute="centerY" id="Y4F-lj-7q3"/>
                                         <constraint firstItem="kNR-ZW-5Ao" firstAttribute="leading" secondItem="E4G-TW-xck" secondAttribute="leadingMargin" constant="7" id="g4i-fM-IXd"/>
                                         <constraint firstItem="Mwe-CK-He4" firstAttribute="baseline" secondItem="kNR-ZW-5Ao" secondAttribute="baseline" id="gdi-Kn-suY"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="E4c-g1-hxN" secondAttribute="trailing" id="gyo-4W-AQ0"/>
+                                        <constraint firstItem="Mwe-CK-He4" firstAttribute="top" secondItem="E4c-g1-hxN" secondAttribute="bottom" constant="33" id="jP9-vj-HxC"/>
+                                        <constraint firstItem="E4c-g1-hxN" firstAttribute="trailing" secondItem="Mwe-CK-He4" secondAttribute="trailing" id="kvF-XI-zEW"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

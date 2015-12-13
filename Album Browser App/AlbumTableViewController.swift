@@ -23,6 +23,9 @@ class AlbumTableViewController: UITableViewController {
         super.viewDidLoad()
       
       albumsCollection = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.Any, options: nil)
+        
+        print(albumsCollection.count)
+
       
       if albumsCollection.count > 0 {
         
@@ -32,6 +35,7 @@ class AlbumTableViewController: UITableViewController {
           
           let albumName = assetsCollection.localizedTitle!
           albumNames.append(albumName)
+
         }
       }
     }
