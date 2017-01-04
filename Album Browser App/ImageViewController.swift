@@ -12,18 +12,18 @@ import Photos
 class ImageViewController: UIViewController {
   
   var assetCollection = PHAssetCollection()
-  var assetFetchResult = PHFetchResult()
+  var assetFetchResult = PHFetchResult<AnyObject>()
   var index : Int = 0
   
   @IBOutlet weak var imageView: UIImageView!
 
   
-  @IBAction func trash(sender: AnyObject) {
-    let alertController = UIAlertController(title: "Delete Image?", message: "Confirm Delete Image", preferredStyle: UIAlertControllerStyle.Alert)
-    alertController.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+  @IBAction func trash(_ sender: AnyObject) {
+    let alertController = UIAlertController(title: "Delete Image?", message: "Confirm Delete Image", preferredStyle: UIAlertControllerStyle.alert)
+    alertController.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
   
-  PHPhotoLibrary.sharedPhotoLibrary().performChanges({ () -> Void in
-    let trash = PHAssetCollectionChangeRequest(forAssetCollection: self.assetCollection)
+  PHPhotoLibrary.shared().performChanges({ () -> Void in
+    let trash = PHAssetCollectionChangeRequest(for: self.assetCollection)
     trash?.removeAssets([self.assetFetchResult[self.index]])
     }, completionHandler: { (success: Bool, error: NSError?) -> Void in
       
@@ -35,18 +35,18 @@ class ImageViewController: UIViewController {
       }
   
   })
-      UIView.animateWithDuration(1.0, animations: { () -> Void in
+      UIView.animate(withDuration: 1.0, animations: { () -> Void in
         self.imageView.alpha = 0.0
       })
       
     }))
     
-    alertController.addAction(UIAlertAction(title: "NO", style: .Default, handler: { (alertAction: UIAlertAction) -> Void in
+    alertController.addAction(UIAlertAction(title: "NO", style: .default, handler: { (alertAction: UIAlertAction) -> Void in
       print("You Selected NO")
 
     }))
     
-    self.presentViewController(alertController, animated: true, completion: nil)
+    self.present(alertController, animated: true, completion: nil)
   
   }
   
@@ -55,12 +55,12 @@ class ImageViewController: UIViewController {
 
     }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
     let asset:PHAsset = assetFetchResult[index] as! PHAsset
     
-   PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options:nil, resultHandler: { (image: UIImage?, object: [NSObject: AnyObject]?) -> Void in
+   PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.aspectFit, options:nil, resultHandler: { (image: UIImage?, object: [AnyHashable: Any]?) -> Void in
       
       self.imageView.image = image
     })

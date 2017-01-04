@@ -11,9 +11,9 @@ import Photos
 
 class AlbumTableViewController: UITableViewController {
 
-  var albumsCollection = PHFetchResult()
+  var albumsCollection = PHFetchResult<AnyObject>()
   var assetsCollection = PHAssetCollection()
-  var photoAsset = PHFetchResult()
+  var photoAsset = PHFetchResult<AnyObject>()
   
   var albumNames = [String]()
   
@@ -22,7 +22,7 @@ class AlbumTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      albumsCollection = PHAssetCollection.fetchAssetCollectionsWithType(PHAssetCollectionType.Album, subtype: PHAssetCollectionSubtype.Any, options: nil)
+      albumsCollection = PHAssetCollection.fetchAssetCollections(with: PHAssetCollectionType.album, subtype: PHAssetCollectionSubtype.any, options: nil) as! PHFetchResult<AnyObject>
         
         print(albumsCollection.count)
 
@@ -42,21 +42,21 @@ class AlbumTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
       return albumNames.count > 0 ? 1 : 0
       
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albumNames.count
     }
 
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! AlbumTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AlbumTableViewCell
       
       assetsCollection = albumsCollection[indexPath.row] as! PHAssetCollection
-      photoAsset = PHAsset.fetchAssetsInAssetCollection(assetsCollection, options: nil)
+      photoAsset = PHAsset.fetchAssets(in: assetsCollection, options: nil) as! PHFetchResult<AnyObject>
         
         if photoAsset.count > 0 {
         
@@ -66,7 +66,7 @@ class AlbumTableViewController: UITableViewController {
         
         let asset: PHAsset = photoAsset[randomIndex] as! PHAsset
         
-          PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil, resultHandler: { (image: UIImage?, object: [NSObject: AnyObject]?) -> Void in
+          PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.aspectFit, options: nil, resultHandler: { (image: UIImage?, object: [AnyHashable: Any]?) -> Void in
             
           cell.albumImage.image = image
           cell.albumCount.text = totalImages > 1 ? "\(totalImages) images" : "\(totalImages) image"
@@ -84,17 +84,17 @@ class AlbumTableViewController: UITableViewController {
         return cell
     }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
     if segue.identifier == "showAlbums" {
       
-      let controller: ViewController = segue.destinationViewController as! ViewController
-      let indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow!
+      let controller: ViewController = segue.destination as! ViewController
+      let indexPath: IndexPath = self.tableView.indexPathForSelectedRow!
       
       controller.albumName = albumNames[indexPath.row]
       assetsCollection = albumsCollection[indexPath.row] as! PHAssetCollection
       controller.assetsCollection = assetsCollection
-      controller.photoAssets = PHAsset.fetchAssetsInAssetCollection(assetsCollection, options: nil)
+      controller.photoAssets = PHAsset.fetchAssets(in: assetsCollection, options: nil)
     }
   }
   

@@ -14,7 +14,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   @IBOutlet weak var collectionView: UICollectionView!
   
   var albumName: String!
-  var photoAssets: PHFetchResult!
+  var photoAssets: PHFetchResult<AnyObject>!
   var assetsCollection: PHAssetCollection!
   
   override func viewDidLoad() {
@@ -26,24 +26,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
   }
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     
     collectionView.reloadData()
     
   }
 
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return photoAssets.count
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    let cell: AlbumsCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! AlbumsCollectionViewCell
+    let cell: AlbumsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! AlbumsCollectionViewCell
     
     let asset: PHAsset = photoAssets[indexPath.row] as! PHAsset
     
-    PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.AspectFit, options: nil) { (image: UIImage?, object: [NSObject: AnyObject]?) -> Void in
+    PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: PHImageContentMode.aspectFit, options: nil) { (image: UIImage?, object: [AnyHashable: Any]?) -> Void in
       
       cell.imageView.image = image
       
@@ -54,30 +54,30 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
   // Mark:  Collection View Layout
   
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     
     let width = self.view.frame.width
     let sizeDimension = (width - 2 * 3) / 4
     
-    return CGSizeMake(sizeDimension, sizeDimension)
+    return CGSize(width: sizeDimension, height: sizeDimension)
     
   }
   
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 1.0
   }
   
-  func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 1.0
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if segue.identifier == "showImage" {
       
-      if let controller: ImageViewController = segue.destinationViewController as? ImageViewController {
+      if let controller: ImageViewController = segue.destination as? ImageViewController {
         
-      controller.index = self.collectionView.indexPathForCell(sender as! UICollectionViewCell)!.item
+      controller.index = self.collectionView.indexPath(for: sender as! UICollectionViewCell)!.item
       
       controller.assetFetchResult = self.photoAssets
       controller.assetCollection = self.assetsCollection

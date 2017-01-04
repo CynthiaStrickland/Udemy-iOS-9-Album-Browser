@@ -208,13 +208,17 @@
 				TargetAttributes = {
 					3D04FDE21BDC511800E8B44A = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = LK662Y5U4K;
+						LastSwiftMigration = 0820;
 					};
 					3D04FDF61BDC511800E8B44A = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3D04FDE21BDC511800E8B44A;
 					};
 					3D04FE011BDC511800E8B44A = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3D04FDE21BDC511800E8B44A;
 					};
 				};
@@ -417,10 +421,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LK662Y5U4K;
 				INFOPLIST_FILE = "Album Browser App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,10 +434,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LK662Y5U4K;
 				INFOPLIST_FILE = "Album Browser App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -443,6 +451,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Album Browser App.app/Album Browser App";
 			};
 			name = Debug;
@@ -455,6 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Album Browser App.app/Album Browser App";
 			};
 			name = Release;
@@ -466,6 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Album Browser App";
 				USES_XCTRUNNER = YES;
 			};
@@ -478,6 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cynthia.Album-Browser-AppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Album Browser App";
 				USES_XCTRUNNER = YES;
 			};
@@ -502,6 +514,7 @@
 				3D04FE0D1BDC511800E8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D04FE0E1BDC511800E8B44A /* Build configuration list for PBXNativeTarget "Album Browser AppTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +523,7 @@
 				3D04FE101BDC511800E8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D04FE111BDC511800E8B44A /* Build configuration list for PBXNativeTarget "Album Browser AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +532,7 @@
 				3D04FE131BDC511800E8B44A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
