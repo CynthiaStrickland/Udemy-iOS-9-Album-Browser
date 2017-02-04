@@ -94,7 +94,7 @@ class AlbumTableViewController: UITableViewController {
       controller.albumName = albumNames[indexPath.row]
       assetsCollection = albumsCollection[indexPath.row] as! PHAssetCollection
       controller.assetsCollection = assetsCollection
-      controller.photoAssets = PHAsset.fetchAssets(in: assetsCollection, options: nil)
+      controller.photoAssets = PHAsset.fetchAssets(in: assetsCollection, options: nil) as! PHFetchResult<AnyObject>
     }
   }
   

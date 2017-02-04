@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import Album_Browser_App
 
 class Album_Browser_AppTests: XCTestCase {
     

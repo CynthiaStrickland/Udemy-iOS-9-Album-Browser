@@ -18,37 +18,38 @@ class ImageViewController: UIViewController {
   @IBOutlet weak var imageView: UIImageView!
 
   
-  @IBAction func trash(_ sender: AnyObject) {
-    let alertController = UIAlertController(title: "Delete Image?", message: "Confirm Delete Image", preferredStyle: UIAlertControllerStyle.alert)
-    alertController.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
-  
-  PHPhotoLibrary.shared().performChanges({ () -> Void in
-    let trash = PHAssetCollectionChangeRequest(for: self.assetCollection)
-    trash?.removeAssets([self.assetFetchResult[self.index]])
-    }, completionHandler: { (success: Bool, error: NSError?) -> Void in
-      
-      if success {
-        print("Image Deleted")
-        
-      } else {
-        print("Error, Image Not Deleted")
-      }
-  
-  })
-      UIView.animate(withDuration: 1.0, animations: { () -> Void in
-        self.imageView.alpha = 0.0
-      })
-      
-    }))
-    
-    alertController.addAction(UIAlertAction(title: "NO", style: .default, handler: { (alertAction: UIAlertAction) -> Void in
-      print("You Selected NO")
-
-    }))
-    
-    self.present(alertController, animated: true, completion: nil)
-  
-  }
+//  @IBAction func trash(_ sender: AnyObject) {
+//    let alertController = UIAlertController(title: "Delete Image?", message: "Confirm Delete Image", preferredStyle: UIAlertControllerStyle.alert)
+//    alertController.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
+//  
+//  PHPhotoLibrary.shared().performChanges({ () -> Void in
+//    let trash = PHAssetCollectionChangeRequest(for: self.assetCollection)
+//    trash?.removeAssets([self.assetFetchResult[self.index]])
+////    trash?.removeAssets([self.assetFetchResult[self.index]]) as! NSArray
+//    }, completionHandler: { (success: Bool, error: NSError?) -> Void in
+//      
+//      if success {
+//        print("Image Deleted")
+//        
+//      } else {
+//        print("Error, Image Not Deleted")
+//      }
+//  
+//  } as! (Bool, Error?) -> Void as! (Bool, Error?) -> Void )
+//      UIView.animate(withDuration: 1.0, animations: { () -> Void in
+//        self.imageView.alpha = 0.0
+//      })
+//      
+//    }))
+//    
+//    alertController.addAction(UIAlertAction(title: "NO", style: .default, handler: { (alertAction: UIAlertAction) -> Void in
+//      print("You Selected NO")
+//
+//    }))
+//    
+//    self.present(alertController, animated: true, completion: nil)
+//  
+//  }
   
     override func viewDidLoad() {
         super.viewDidLoad()
